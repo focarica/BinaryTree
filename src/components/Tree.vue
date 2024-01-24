@@ -1,5 +1,5 @@
 <template>
-  <div class="treeContainer" @click="alert()">
+  <div class="treeContainer">
     <ul class="binaryTreeList">
       <Node v-if="root" :node="root"> </Node>
     </ul>
@@ -15,11 +15,5 @@ export default {
   components: {
     Node,
   },
-  methods: { 
-    alert()
-    {
-      console.log(this.root);
-    }
-  }
 };
 </script>

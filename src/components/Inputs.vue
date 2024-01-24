@@ -28,7 +28,6 @@
       <button class="button" @click="isBalanced()">IsBalanced</button>
     </div>
   </div>
-  <button class="button" @click="toArray()">TESTE</button>
 </template>
 <script>
 import BinaryTree from "../assets/modules/BST.js";
@@ -223,13 +222,7 @@ export default {
       this.data.push(this.binaryTree.internalLength());
       this.$emit("lengthData", this.data[0]);
     },
-    toArray() {
-      let binTreeArray = [];
-      this.binaryTree.levelOrderTranverse((data) => {
-        binTreeArray.push(data);
-      });
-      console.log(binTreeArray);
-    },
+    
   },
 };
 </script>

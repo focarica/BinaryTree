@@ -17,27 +17,38 @@
       @treeFeedback="(data) => handleTreeFeedback(data)"
     ></Inputs>
   </main>
+  <div class='outputContainerWrapper'>
+    <div class="outputContainer" v-if="this.show">
+      <transition mode="out-in" name="fade">
+        <h2 :key="type">
+          {{ type }}
+        </h2>
+      </transition>
 
-  <div class="outputContainer" v-if="this.show">
-    <transition mode="out-in" name="fade">
-      <h2 :key="type">
-        {{ type }}
-      </h2>
-    </transition>
-
-    <transition name="fade" mode="out-in">
-      <ul class="outputList" :key="this.data">
-        <li v-for="num in this.data" class="outputItem">
-          <h2>
-            <span> {{ num }}</span>
-            <span v-if="num != this.data[this.data.length - 1]"> -> </span>
-          </h2>
-        </li>
-      </ul>
-    </transition>
+      <transition name="fade" mode="out-in">
+        <ul class="outputList" :key="this.data">
+          <li v-for="num in this.data" class="outputItem">
+            <h2>
+              <span>
+                {{ num }}
+                <span v-if="num != this.data[this.data.length - 1]">
+                  ->
+                </span></span
+              >
+            </h2>
+          </li>
+        </ul>
+      </transition>
+    </div>
   </div>
-  <Tree :root="this.binaryTree.root" v-if='showTree'></Tree>
 
+  <transition name="fade" mode="out-in">
+    <Tree
+      :root="this.binaryTree.root"
+      v-if="showTree"
+      :key="this.showTree"
+    ></Tree>
+  </transition>
 </template>
 
 <script>
@@ -133,7 +144,9 @@ export default {
     },
     handleTreeFeedback(data) {
       this.binaryTree = data;
-      console.log(this.binaryTree);
+      this.showTree = true;
+    },
+    showTreeC() {
       this.showTree = true;
     },
   },
@@ -147,6 +160,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
