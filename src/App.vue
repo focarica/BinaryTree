@@ -75,22 +75,22 @@ export default {
   methods: {
     handleMin(data) {
       this.data = [data];
-      this.type = "Minimum Value ";
+      this.type = "Valor Minimo ";
       this.show = true;
     },
     handleMax(data) {
       this.data = [data];
-      this.type = "Maximum Value ";
+      this.type = "Valor Maximo ";
       this.show = true;
     },
     handleHeight(data) {
       this.data = [data];
-      this.type = "Tree Height ";
+      this.type = "Altura da Arvore ";
       this.show = true;
     },
     handleSize(data) {
       this.data = [data];
-      this.type = "Tree Size ";
+      this.type = "Tamanho da Arvore ";
       this.show = true;
     },
     handleInOrderData(data) {
@@ -98,7 +98,7 @@ export default {
       data.forEach((data) => {
         this.data.push(data);
       });
-      this.type = "In-Order Tranverse ";
+      this.type = "Percurso Em-Ordem ";
       this.show = true;
     },
     handlePreOrderData(data) {
@@ -106,7 +106,7 @@ export default {
       data.forEach((data) => {
         this.data.push(data);
       });
-      this.type = "Pre-Order Tranverse ";
+      this.type = "Percurso Pre-Ordem ";
       this.show = true;
     },
     handlePostOrderData(data) {
@@ -114,7 +114,7 @@ export default {
       data.forEach((data) => {
         this.data.push(data);
       });
-      this.type = "Post-Order Tranverse ";
+      this.type = "Percurso Pos-Ordem ";
       this.show = true;
     },
     handleLevelOrderData(data) {
@@ -122,16 +122,16 @@ export default {
       data.forEach((data) => {
         this.data.push(data);
       });
-      this.type = "Level-Order Tranverse ";
+      this.type = "Percurso por Nivel (LevelOrder) ";
       this.show = true;
     },
     handleIsBalancedData(data) {
       this.data = [];
 
       if (data) {
-        this.data.push("The tree is balanced");
+        this.data.push("A arvore esta balanceada");
       } else {
-        this.data.push("The tree is not balanced");
+        this.data.push("A arvore nao esta balanceada");
       }
 
       this.type = "";
@@ -139,7 +139,7 @@ export default {
     },
     handleLengthData(data) {
       this.data = [data];
-      this.type = "Tree Internal Length";
+      this.type = "Comprimento Interno";
       this.show = true;
     },
     handleTreeFeedback(data) {
