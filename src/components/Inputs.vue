@@ -6,26 +6,24 @@
         name="numberInput"
         id="inputNumber"
         class="input"
-        placeholder="Type a number"
+        placeholder="Digite um numero"
         @keyup.enter="submitElement()"
       />
       <button class="button" id="submit" @click="submitElement()">
-        Submit
+        Enviar
       </button>
-      <button class="button" @click="getMin()">Minimum Value</button>
-      <button class="button" @click="getMax()">Maximum Value</button>
-      <button class="button" @click="getHeight()">Tree Height</button>
-      <button class="button" @click="getSize()">Tree Size</button>
-      <button class="button" @click="getLength()">In. Length</button>
+      <button class="button" @click="getMin()">Valor Minimo</button>
+      <button class="button" @click="getMax()">Valor Maximo</button>
+      <button class="button" @click="getHeight()">Altura da Arvore</button>
+      <button class="button" @click="getSize()">Tamanho da Arvore</button>
+      <button class="button" @click="getLength()">Comprimento Interno</button>
     </div>
     <div class="tranverse">
-      <button class="button" @click="inOrderT()">In-Order Tranverse</button>
-      <button class="button" @click="preOrderT()">Pre-Order Tranverse</button>
-      <button class="button" @click="postOrderT()">Post-Order Tranverse</button>
-      <button class="button" @click="levelOrderT()">
-        Level-Order Tranverse
-      </button>
-      <button class="button" @click="isBalanced()">IsBalanced</button>
+      <button class="button" @click="inOrderT()">Percurso Em-Ordem</button>
+      <button class="button" @click="preOrderT()">Percurso Pre-Ordem</button>
+      <button class="button" @click="postOrderT()">Percurso Pos-Ordem</button>
+      <button class="button" @click="levelOrderT()">Percurso por Nivel (LevelOrder)</button>
+      <button class="button" @click="isBalanced()">Arvore Balanceada?</button>
     </div>
   </div>
 </template>

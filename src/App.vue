@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1><span id="border"> Binary Tree</span></h1>
+    <h1><span id="border"> Arvore Binaria de Busca</span></h1>
   </header>
   <main class="mainContainer">
     <Inputs
