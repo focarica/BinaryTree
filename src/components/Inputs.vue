@@ -56,15 +56,10 @@ export default {
         this.binaryTree = new BinaryTree();
       }
       const inputElement = Number(document.getElementById("inputNumber").value);
-      if (!inputElement && inputElement != 0) {
-        window.alert("Insira um valor válido");
+      if (!inputElement && inputElement != 0 || this.binaryTree.contains(inputElement)) {
+        window.alert("Insira um valor válido ou que ainda nao foi inserido!");
         return;
       }
-      if (this.binaryTree.contains(inputElement)) {
-        window.alert("Valor já inserido");
-        return;
-      }
-
       document.getElementById("inputNumber").value = null;
       this.binaryTree.insert(inputElement);
       this.$emit("treeFeedback", this.binaryTree);
