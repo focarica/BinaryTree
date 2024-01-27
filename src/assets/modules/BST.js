@@ -76,17 +76,19 @@ export default class BinaryTree {
     }
   }
   contains(data){
-    while(this.root != null){
-      if(this.root.data == data){
+    let current = this.root;
+
+    while(current != null){
+      if(current.data == data){
         return true;
       }
-      if(this.root.data < data){
-        this.root = this.root.right;
+      if(current.data < data){
+        current = current.right;
       }else{
-        this.root = this.root.left;
+        current = current.left;
       }
     }
-    return false;
+    return false
   }
   min() {
     return this.minNode(this.root);
