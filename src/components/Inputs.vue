@@ -56,11 +56,7 @@ export default {
         this.binaryTree = new BinaryTree();
       }
       const inputElement = Number(document.getElementById("inputNumber").value);
-      if (
-        inputElement == null ||
-        inputElement == undefined ||
-        inputElement == 0
-      ) {
+      if (!inputElement && inputElement != 0) {
         window.alert("Insira um valor válido");
         return;
       }
@@ -68,7 +64,7 @@ export default {
         window.alert("Valor já inserido");
         return;
       }
-      
+
       document.getElementById("inputNumber").value = null;
       this.binaryTree.insert(inputElement);
       this.$emit("treeFeedback", this.binaryTree);
