@@ -75,6 +75,19 @@ export default class BinaryTree {
       }
     }
   }
+  contains(data){
+    while(this.root != null){
+      if(this.root.data == data){
+        return true;
+      }
+      if(this.root.data < data){
+        this.root = this.root.right;
+      }else{
+        this.root = this.root.left;
+      }
+    }
+    return false;
+  }
   min() {
     return this.minNode(this.root);
   }

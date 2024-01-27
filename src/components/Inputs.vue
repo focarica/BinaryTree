@@ -63,6 +63,9 @@ export default {
       ) {
         window.alert("Insira um valor válido");
         return;
+      }else if(this.binaryTree.contains(inputElement)){
+        window.alert("Valor já inserido");
+        return;
       }
       document.getElementById("inputNumber").value = null;
       this.binaryTree.insert(inputElement);
