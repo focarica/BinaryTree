@@ -113,7 +113,7 @@ export default {
         window.alert("Árvore vazia");
         return;
       }
-      let height = this.binaryTree.height();
+      let height = (this.binaryTree.height()) - 1;
       this.data = [];
       this.data.push(height);
       this.$emit("heightData", this.data[0]);
