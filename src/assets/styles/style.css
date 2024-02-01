@@ -251,7 +251,12 @@ input::-webkit-inner-spin-button {
 }
 
 #resetButton{
-  background-color: rgb(131, 2, 2);
+  background-color: crimson;
+}
+
+#resetButton:hover{
+  background-color: white;
+  color: crimson;
 }
 
 @keyframes surge {
