@@ -61,7 +61,7 @@ export default {
         inputElement == null ||
         inputElement == undefined ||
         inputElement.length == 0 ||
-        !inputElement.match(/^[a-zA-Z]+$/)
+        !inputElement.match(/^[a-z0-9]+$/i)
       )
       {
         window.alert("Insira um valor válido.");
@@ -79,7 +79,6 @@ export default {
           ". Para aceitar tipos diferentes, será necessário reiniciar a árvore.");
       }
 
- 
       if (this.binaryTree.contains(inputElement)) {
         window.alert("Valor já inserido na árvore. Insira um valor diferente.");
         return;
