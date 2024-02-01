@@ -250,6 +250,10 @@ input::-webkit-inner-spin-button {
   position:absolute;
 }
 
+#resetButton{
+  background-color: rgb(131, 2, 2);
+}
+
 @keyframes surge {
   0% {
     transform: translateY(-20px);

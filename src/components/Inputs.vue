@@ -26,7 +26,7 @@
         Percurso por Nivel (LevelOrder)
       </button>
       <button class="button" @click="isBalanced()">Arvore Balanceada?</button>
-      <button class="button" @click="resetTree()">Reiniciar Árvore</button>
+      <button class="button" id="resetButton" @click="resetTree()">Reiniciar Árvore</button>
     </div>
   </div>
 </template>
