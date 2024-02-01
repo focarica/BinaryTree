@@ -2,11 +2,11 @@
   <div class="inputs">
     <div class="data">
       <input
-        type="number"
+        type="text"
         name="numberInput"
         id="inputNumber"
         class="input"
-        placeholder="Digite um numero"
+        placeholder="Digite um valor"
         @keyup.enter="submitElement()"
       />
       <button class="button" id="submit" @click="submitElement()">
@@ -55,17 +55,38 @@ export default {
       if (this.binaryTree == null) {
         this.binaryTree = new BinaryTree();
       }
-      const inputElement = Number(document.getElementById("inputNumber").value);
+      var inputElement = document.getElementById("inputNumber").value;
+
       if (
         inputElement == null ||
-        inputElement == undefined || 
-        document.getElementById("inputNumber").value.length == 0)
+        inputElement == undefined ||
+        inputElement.length == 0 ||
+        !inputElement.match(/^[a-zA-Z]+$/)
+      )
       {
-        window.alert("Insira um valor válido");
+        window.alert("Insira um valor válido.");
         return;
       }
+
+      if(!isNaN(inputElement)){
+        inputElement = Number(inputElement);
+      }
+
+      if(this.binaryTree.size() == 0){
+        this.binaryTree.type = typeof inputElement;
+        window.alert(
+          "Como o valor " + inputElement + " foi adicionado o tipo da árvore está definido como " + this.binaryTree.type + 
+          ". Para aceitar tipos diferentes, será necessário reiniciar a árvore.");
+      }
+
+ 
       if (this.binaryTree.contains(inputElement)) {
-        window.alert("Valor já inserido");
+        window.alert("Valor já inserido na árvore. Insira um valor diferente.");
+        return;
+      }
+
+      if(this.binaryTree.type != typeof inputElement){
+        window.alert("Valor inserido não é do tipo da árvore. Insira um valor do tipo " + this.binaryTree.type + " ou reinicie a árvore.");
         return;
       }
 
