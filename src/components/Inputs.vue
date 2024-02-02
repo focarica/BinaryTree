@@ -64,7 +64,7 @@ export default {
         inputElement == null ||
         inputElement == undefined ||
         inputElement.length == 0 ||
-        !inputElement.match(/^[a-z0-9 ]+$/i)
+        !inputElement.match(/^[a-z0-9 çãõéí]+$/i)
       ) {
         window.alert("Insira um valor válido.");
         return;
